@@ -1,0 +1,228 @@
+/* Estilos para o cabeçalho */
+header {
+    background-color: #003087;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Estilos robustos para o perfil */
+#perfil {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+/* Estilo para a foto do aluno */
+#foto-aluno {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#perfil label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+    justify-content: center;
+}
+
+#perfil label input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#perfil label input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Largura dos inputs do perfil */
+#escola, #nome {
+    width: 300px;
+}
+
+#turma, #serie {
+    width: 150px;
+}
+
+/* Estilo do botão de perfil */
+#editar-perfil {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#editar-perfil:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para bimestres */
+.bimestre {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do bimestre */
+.bimestre h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Cores alternadas para os bimestres */
+#bimestres .bimestre:nth-child(1) {
+    background-color: #e6f3e6;
+}
+
+#bimestres .bimestre:nth-child(2) {
+    background-color: #f3e6e6;
+}
+
+#bimestres .bimestre:nth-child(3) {
+    background-color: #e6e6f3;
+}
+
+#bimestres .bimestre:nth-child(4) {
+    background-color: #f3f0e6;
+}
+
+/* Estilo para as áreas do conhecimento */
+.area-conhecimento {
+    margin-bottom: 20px;
+}
+
+.area-titulo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para a média da área (alinhada à esquerda) */
+.media-area {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4CAF50; /* Verde para destacar */
+    margin-top: 10px;
+    text-align: left; /* Alinhado à esquerda */
+}
+
+/* Estilo para as disciplinas com checklist */
+.disciplina-com-checklist {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.disciplina {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo para os nomes das disciplinas */
+.disciplina label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    margin-right: 10px;
+}
+
+/* Estilo para o checklist */
+.checklist {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 300px;
+    height: 60px;
+}
+
+/* Estilo para os botões de bimestre */
+.editar-bimestre, .salvar-bimestre {
+    padding: 8px 16px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    width: 100px; /* Largura fixa para consistência */
+    text-align: center;
+}
+
+.editar-bimestre {
+    background-color: #4CAF50; /* Verde */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Mantém centralizado */
+}
+
+.editar-bimestre:hover {
+    background-color: #45a049;
+}
+
+.salvar-bimestre {
+    background-color: #008CBA; /* Azul */
+    display: none; /* Inicialmente escondido, controlado pelo JS */
+    margin-left: 0; /* Alinhado à esquerda */
+    margin-right: auto;
+}
+
+.salvar-bimestre:hover {
+    background-color: #007bb5;
+}
