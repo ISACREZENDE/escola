@@ -42,7 +42,7 @@ header p {
     padding: 20px;
     box-shadow: var(--shadow);
     max-width: 500px;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px; /* Reduzido para aproximar do "Escolher Bimestre" */
     text-align: center;
 }
 
@@ -251,6 +251,47 @@ textarea {
     animation: fadeIn 0.3s ease-in;
 }
 
+/* Estilos para navegação entre bimestres */
+.bimestre-nav {
+    text-align: center;
+    margin: 10px auto 20px; /* Ajustado para ficar próximo do perfil */
+    max-width: 500px; /* Alinhado com o perfil */
+}
+
+.bimestre-nav h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.bimestre-link, .back-link {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.bimestre-link:hover, .back-link:hover {
+    background-color: #45a049;
+}
+
+.bimestre-link.active {
+    background-color: var(--secondary-color);
+    cursor: default;
+}
+
+.back-link {
+    background-color: #555;
+}
+
+.back-link:hover {
+    background-color: #444;
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
     #perfil, .bimestre {
@@ -269,5 +310,14 @@ textarea {
     .disciplina {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .bimestre-nav {
+        padding: 0 10px;
+    }
+
+    .bimestre-link, .back-link {
+        display: block;
+        margin: 5px auto;
     }
 }
