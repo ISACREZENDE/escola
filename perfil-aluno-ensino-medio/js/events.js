@@ -1,9 +1,9 @@
 import { aluno, saveAlunoData } from './data.js';
-import { renderPerfil, renderBimestres } from './dom.js';
+import { renderPerfil, renderBimestre } from './dom.js';
 
 function setupEvents() {
     // Evento do perfil
-    document.getElementById('editar-perfil').addEventListener('click', () => {
+    document.getElementById('editar-perfil')?.addEventListener('click', () => {
         const isEditing = document.getElementById('editar-perfil').textContent === 'Salvar';
         if (!isEditing) {
             document.getElementById('escola').removeAttribute('readonly');
@@ -39,10 +39,12 @@ function setupBimestreEvents() {
             const bimestreDiv = botao.parentElement;
             const gradeInputs = bimestreDiv.querySelectorAll('.grade-input');
             const checklistInputs = bimestreDiv.querySelectorAll('.checklist-input');
+            const checklistTextareas = bimestreDiv.querySelectorAll('.checklist-textarea');
             
-            // Habilitar notas e checkboxes
+            // Habilitar notas, checkboxes e textarea
             gradeInputs.forEach(input => input.disabled = false);
             checklistInputs.forEach(input => input.disabled = false);
+            checklistTextareas.forEach(textarea => textarea.disabled = false);
             
             botao.style.display = 'none';
             const botaoSalvar = bimestreDiv.querySelector('.salvar-bimestre');
@@ -57,6 +59,7 @@ function setupBimestreEvents() {
             const bimestreDiv = botao.parentElement;
             const gradeInputs = bimestreDiv.querySelectorAll('.grade-input');
             const checklistInputs = bimestreDiv.querySelectorAll('.checklist-input');
+            const checklistTextareas = bimestreDiv.querySelectorAll('.checklist-textarea');
 
             // Salvar notas
             gradeInputs.forEach(input => {
@@ -78,13 +81,22 @@ function setupBimestreEvents() {
                 input.disabled = true;
             });
 
+            // Salvar textarea do "Outros"
+            checklistTextareas.forEach(textarea => {
+                const areaKey = textarea.dataset.areaKey;
+                const disciplineIndex = parseInt(textarea.dataset.disciplineIndex);
+                const checklistKey = textarea.dataset.checklistKey;
+                aluno.bimestres[bimestreIndex].disciplinas[areaKey][disciplineIndex].checklist[checklistKey] = textarea.value;
+                textarea.disabled = true;
+            });
+
             botao.style.display = 'none';
             botao.classList.remove('active');
             const botaoEditar = bimestreDiv.querySelector('.editar-bimestre');
             botaoEditar.style.display = 'block';
             saveAlunoData(aluno);
-            renderBimestres();
-            setupBimestreEvents(); // Reaplicar eventos após re-renderização
+            renderBimestre(bimestreIndex); // Renderizar apenas o bimestre atual
+            setupBimestreEvents(); // Reaplicar eventos
         });
     });
 }

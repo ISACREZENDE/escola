@@ -71,7 +71,9 @@ function renderBimestre(bimestreIndex) {
             for (const [item, value] of Object.entries(disciplina.checklist)) {
                 if (item === 'Outros') {
                     divChecklist.innerHTML += `
-                        <label>Outros: <textarea disabled>${value || ''}</textarea></label>
+                        <label>Outros: <textarea class="checklist-textarea" disabled
+                            data-bimestre-index="${bimestreIndex}" data-area-key="${areaKey}" data-discipline-index="${disciplineIndex}" 
+                            data-checklist-key="${item}">${value || ''}</textarea></label>
                     `;
                 } else {
                     divChecklist.innerHTML += `
